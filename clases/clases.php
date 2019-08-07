@@ -82,7 +82,7 @@ class post{
 	{
         /* Para buscar una publicacion por usuario*/
 		$con = conexion("root", "");
-		$consulta = $con->prepare("select U.CodUsua, U.nombre, U.foto_perfil, P.CodPost, P.titulo, P.autor, P.fecha, P.categoria, P.contenido, P.img, P.url from usuarios U inner join post P on U.CodUsua = P.CodUsua where P.CodUsua = :CodUsua ORDER BY P.CodPost DESC");
+		$consulta = $con->prepare("select U.CodUsua, U.nombre, U.foto_perfil, P.CodPost, P.titulo, P.autor, P.fecha, P.categoria, P.contenido, P.img, P.url from usuarios U inner join post P on U.CodUsua = P.CodUsua where P.CodUsua = :CodUsua ORDER BY P.CodPost DESC limit 10");
         /*P.CodUsua = :CodUsua es necesario, porque si bien codigo SQL inmediato anterior permite hacer una relacion con CodUsua entre las tablas "usuarios" con "post", esto es generico y para todos los registros, para aplicar espacifidad  necesitamos filtrar por el $CodUsua enviado como parametro en esta funcion con repsto a P.CodUsua de Post, recordando la necesidad del INNER JOIN es debido a que necesitamos mas datos de los registros del usuario para llamar a datos como nombre, foto_perfil del usuario y justamente las columnas que se ha seleccionado en SELECT , el ORDER BY P.CodPost DESC implicaera un orden descendente de mayor a menor, si bien no tenemos registrado una fecha, el CodPost esta programado como AUTO-INCREMENT, TODO:por ello los POST mas recientes seran los valores mas altos de CodPost TODO:*/
 		$consulta->execute(array(':CodUsua' => $CodUsua));
 		$resultado = $consulta->fetchAll();
@@ -97,7 +97,7 @@ class post{
 		;
    		*/
 		$con = conexion("root", "");
-		$consulta = $con->prepare("select U.CodUsua, U.nombre, U.foto_perfil, P.CodPost, P.titulo, P.fecha, P.categoria, P.autor, P.contenido, P.img, P.url from usuarios U inner join post P on U.CodUsua = P.CodUsua where P.CodUsua in($amigos) ORDER BY P.CodPost DESC limit 20");
+		$consulta = $con->prepare("select U.CodUsua, U.nombre, U.foto_perfil, P.CodPost, P.titulo, P.fecha, P.categoria, P.autor, P.contenido, P.img, P.url from usuarios U inner join post P on U.CodUsua = P.CodUsua where P.CodUsua in($amigos) ORDER BY P.CodPost DESC limit 10");
 		$consulta->execute();
 		$resultado = $consulta->fetchAll();
 		return $resultado;

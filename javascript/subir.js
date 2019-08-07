@@ -181,7 +181,7 @@ function parrafo_citar(subir_cont, tipoTextArea, tipoInput, tipoDiv, tipoCita){
     if(y>0)
         n=-1;
 
-    cita= "<label class=\"label\">Parrafo " +y + " de " +tipoTextArea+ " hacia referencia : "+tipoCita+" (Dejar en blanco si se ingresa manualmente)\""+"<textarea name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+"[" + (++n) + "]" + "[parrafo]"+ "\" + id=\"" + tipoTextArea + " " + (++j) + "\" class =\"contenidos\" rows=\"4\" cols=\"40\" placeholder=\"parrafo " +y + " de " +tipoTextArea+ " hacia referencia : "+tipoCita+" (Dejar en blanco si se ingresa manualmente)\"></textarea></label><br>";
+    cita= "<label class=\"label\">Parrafo " +(y+2) + " de " +tipoTextArea+ " hacia referencia : "+tipoCita+" (Dejar en blanco si se ingresa manualmente)\""+"<textarea name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+"[" + (++n) + "]" + "[parrafo]"+ "\" + id=\"" + tipoTextArea + " " + (++j) + "\" class =\"contenidos\" rows=\"4\" cols=\"40\" placeholder=\"parrafo " +(y+2) + " de " +tipoTextArea+ " hacia referencia : "+tipoCita+" (Dejar en blanco si se ingresa manualmente)\"></textarea></label><br>";
 
     alert(tipoTextArea+ ','+tipoInput + ','+tipoDiv + ','+ tipoTextArea + ',' +tipoInput + ',' + tipoDiv + ',' + " valor de y:"+y+" EL tipo de cita: "+tipoCita );
 
@@ -218,7 +218,7 @@ function parrafo_referencias(subir_cont, tipoTextArea, tipoInput, tipoDiv, tipoR
     if(i>0)
         n=-1;
     
-    referencia= "<label class=\"label\">Parrafo " +i + " de " +tipoTextArea+ " hacia referencia : "+tipoReferencia+" (Nota: aqui puede poner la cita manualmente o un parrafo referenciado a una cita)\""+"<textarea name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (i) + "]"+"[" + (++n) + "]" + "[parrafo]"+ "\" id=\"" + tipoTextArea +" "+ (++j) + "\" class =\"contenidos\" rows=\"4\" cols=\"40\" placeholder=\"parrafo " +i + " de " +tipoTextArea+ " hacia referencia : "+tipoReferencia+"\"></textarea></label><br>";
+    referencia= "<label class=\"label\">Parrafo " +(i+2) + " de " +tipoTextArea+ " hacia referencia : "+tipoReferencia+" (Nota: aqui puede poner la cita manualmente o un parrafo referenciado a una cita)\""+"<textarea name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (i) + "]"+"[" + (++n) + "]" + "[parrafo]"+ "\" id=\"" + tipoTextArea +" "+ (++j) + "\" class =\"contenidos\" rows=\"4\" cols=\"40\" placeholder=\"parrafo " +(i+2) + " de " +tipoTextArea+ " hacia referencia : "+tipoReferencia+"\"></textarea></label><br>";
 
 
     config_referencia(subir_cont,tipoTextArea, tipoInput, tipoDiv, tipoReferencia, n , i, j);
@@ -232,46 +232,46 @@ function config_cita(subir_cont, tipoTextArea, tipoInput, tipoDiv, tipoCita, n, 
 
     if(tipoCita==="Cita basada en el autor(Cita textual y de menos de 40 palabras)"||tipoCita==="Cita basada en el autor(Cita textual y de mas de 40 palabras)"||tipoCita==="Cita basada en el autor(parafraseo)"){
 
-        cita+= "<label>Apellido-s de "+tipoCita+ " para parrafo"+(j+1)+"(Separar cada uno con coma, si son 3 a 5 autores se separan con \"comas\" si hay mas de 6 autores solo se pone el primero y \"et al.\" al final)<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"><label><br><hr>" +
+        cita+= "<label>Apellido-s de "+tipoCita+ " para parrafo "+(y+2)+"(Separar cada uno con coma, si son 3 a 5 autores se separan con \"comas\" si hay mas de 6 autores solo se pone el primero y \"et al.\" al final)<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"><label><br><hr>" +
 
-        "<label>Anio de "+tipoCita+"  parrafo"+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>";
+        "<label>Anio de "+tipoCita+" parrafo "+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>";
     }else
 
     if(tipoCita==="Cita basada en el texto(Cita textual y de menos de 40 palabras)"||tipoCita==="Cita basada en el texto(Cita textual y de mas de 40 palabras)"||tipoCita==="Cita basada en el texto(parafraseo)"){
-        cita+= "<label>Apellido-s de "+tipoCita+ " para parrafo"+(j+1)+"(Separar cada uno con coma, si son 3 a 5 autores se separan con \"comas\" si hay mas de 6 autores solo se pone el primero y \"et al.\" al final)<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" + placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
+        cita+= "<label>Apellido-s de "+tipoCita+ " para parrafo"+(y+2)+"(Separar cada uno con coma, si son 3 a 5 autores se separan con \"comas\" si hay mas de 6 autores solo se pone el primero y \"et al.\" al final)<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" + placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Anio de"+tipoCita+"para parrafo"+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>"+
+        "<label>Anio de "+tipoCita+" para parrafo "+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>"+
 
-        "<label>Paginas de"+tipoCita+"para parrafo (Con formato: p.numero de paginas)"+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[pagina]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"numero de paginas\" class = \"contenidos\"></label><br><hr>"
+        "<label>Paginas de "+tipoCita+" para parrafo (Con formato: p.numero de paginas) "+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[pagina]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"numero de paginas\" class = \"contenidos\"></label><br><hr>"
         
         
         ;
         
     }else
     if(tipoCita==="Autor corporativo"){
-        cita+= "<label>Nombre de organizacion de "+tipoCita+ " para parrafo "+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[Nom_organizacion]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
+        cita+= "<label>Nombre de organizacion de "+tipoCita+ " para parrafo "+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[Nom_organizacion]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Sigla de organizacion de "+tipoCita+ " para parrafo "+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[sigla]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>"+
+        "<label>Sigla de organizacion de "+tipoCita+ " para parrafo "+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[sigla]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>"+
 
-        "<label>Anio de"+tipoCita+"para parrafo "+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>";
+        "<label>Anio de "+tipoCita+" para parrafo "+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>";
     }else 
     if(tipoCita==="Anonimo"){
-        cita+= "<label>El apellido ponemos como 'Anonimo' "+tipoCita+ " para parrafo"+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
+        cita+= "<label>El apellido ponemos como 'Anonimo' "+tipoCita+ " para parrafo "+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Anio de"+tipoCita+"para parrafo"+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>"+
+        "<label>Anio de "+tipoCita+" para parrafo "+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>"+
 
-        "<label>Paginas de"+tipoCita+"para parrafo (Con formato: p.numero de paginas)"+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[pagina]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"numero de paginas\" class = \"contenidos\"></label><br><hr>"
+        "<label>Paginas de "+tipoCita+" para parrafo (Con formato: p.numero de paginas) "+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[pagina]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"numero de paginas\" class = \"contenidos\"></label><br><hr>"
         
         
         ;
         
     }else
     if(tipoCita==="Cita de una cita"){
-        cita+= "<label>Apellido-s de autor de opinion o afirmacion de"+tipoCita+ " para parrafo"+(j+1)+"(Separar cada uno con coma, si son 3 a 5 autores se separan con \"comas\" si hay mas de 6 autores solo se pone el primero y \"et al.\" al final)<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
+        cita+= "<label>Apellido-s de autor de opinion o afirmacion de "+tipoCita+ " para parrafo "+(y+2)+"(Separar cada uno con coma, si son 3 a 5 autores se separan con \"comas\" si hay mas de 6 autores solo se pone el primero y \"et al.\" al final)<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Apellido-s de autor de la cita "+tipoCita+ " para parrafo"+(j+1)+"(Separar cada uno con coma, si son 3 a 5 autores se separan con \"comas\" si hay mas de 6 autores solo se pone el primero y \"et al.\" al final)<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>"+
+        "<label>Apellido-s de autor de la cita "+tipoCita+ " para parrafo "+(y+2)+"(Separar cada uno con coma, si son 3 a 5 autores se separan con \"comas\" si hay mas de 6 autores solo se pone el primero y \"et al.\" al final)<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (y) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>"+
 
-        "<label>Anio de"+tipoCita+"para parrafo"+(j+1)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>";
+        "<label>Anio de"+tipoCita+"para parrafo"+(y+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (y) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea + " " + (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>";
     }
 
 
@@ -311,37 +311,37 @@ function config_referencia(subir_cont, tipoTextArea, tipoInput, tipoDiv, tipoRef
 
     if(tipoReferencia==="Libro con autor"){
 
-        referencia+= "<label>Apellido-s de "+tipoReferencia+ " para parrafo"+i+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (i) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
+        referencia+= "<label>Apellido-s de "+tipoReferencia+ " para parrafo"+(i+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (i) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Apellido-s de autor\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Iniciales de nombre-s "+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+ "[" + (++n) + "]" + "[nombre]" + "\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Iniciales de nombre-s ( separadas por punto )\" class = \"contenidos\"></label><br><hr>" + 
+        "<label>Iniciales de nombre-s "+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+ "[" + (++n) + "]" + "[nombre]" + "\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Iniciales de nombre-s ( separadas por punto )\" class = \"contenidos\"></label><br><hr>" + 
 
-        "<label>Anio de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>"+
+        "<label>Anio de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>"+
 
-        "<label>Titulo de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]" + "[" + (++n) + "]" + "[titulo]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"titulo de la publicacion\" class = \"contenidos\"></label><br><hr>" +
+        "<label>Titulo de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]" + "[" + (++n) + "]" + "[titulo]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"titulo de la publicacion\" class = \"contenidos\"></label><br><hr>" +
     
-        "<label>Ciudad de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[ciudad]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Ciudad\" class = \"contenidos\"></label><br><hr>" +
+        "<label>Ciudad de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[ciudad]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Ciudad\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Pais de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[pais]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Pais\" class = \"contenidos\"></label><br><hr>" +
+        "<label>Pais de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[pais]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Pais\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Editorial de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[editorial]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Editorial\" class = \"contenidos\"></label><br><hr>" ;
+        "<label>Editorial de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[editorial]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Editorial\" class = \"contenidos\"></label><br><hr>" ;
       
 
     }else
     if(tipoReferencia==="Libro con editor"){
-        referencia+= "<label>Apellido-s de "+tipoReferencia+ " para parrafo"+i+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (i) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Apellido de autor\" class = \"contenidos\"></label><br><hr>" +
+        referencia+= "<label>Apellido-s de "+tipoReferencia+ " para parrafo"+(i+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+"[" + (i) + "]"+ "[" + (++n) + "]" + "[apellido]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Apellido de autor\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Iniciales de nombre-s "+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+ "[" + (++n) + "]" + "[nombre]" + "\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Iniciales de nombre-s ( separadas por punto)\" class = \"contenidos\"></label><br><hr>" + 
+        "<label>Iniciales de nombre-s "+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+ "[" + (++n) + "]" + "[nombre]" + "\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Iniciales de nombre-s ( separadas por punto)\" class = \"contenidos\"></label><br><hr>" + 
         "<label>(Ed) de"+tipoReferencia+"para parrafo(no necesita modificarse)"+i+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea +" "+ (++j) + "\"  class = \"contenidos\"></label><br><hr>"+
 
-        "<label>Anio de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>"+
+        "<label>Anio de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + "name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]" + "[" + (++n) + "]" + "[anio]"+ "\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"anio de publicacion\" class = \"contenidos\"></label><br><hr>"+
 
-        "<label>Titulo de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]" + "[" + (++n) + "]" + "[titulo]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"titulo de la publicacion\" class = \"contenidos\"></label><br><hr>" +
+        "<label>Titulo de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]" + "[" + (++n) + "]" + "[titulo]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"titulo de la publicacion\" class = \"contenidos\"></label><br><hr>" +
     
-        "<label>Ciudad de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[ciudad]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Ciudad\" class = \"contenidos\"></label><br><hr>" +
+        "<label>Ciudad de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[ciudad]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Ciudad\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Pais de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[pais]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Pais\" class = \"contenidos\"></label><br><hr>" +
+        "<label>Pais de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[pais]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Pais\" class = \"contenidos\"></label><br><hr>" +
 
-        "<label>Editorial de"+tipoReferencia+"para parrafo"+i+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[editorial]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Editorial\" class = \"contenidos\"></label><br><hr>" ;
+        "<label>Editorial de"+tipoReferencia+"para parrafo"+(i+2)+"<input type=\"text\"" + " name=\"" +subir_cont+ "[" +tipoTextArea + "]"+ "[" + (i) + "]"+"[" + (++n) + "]" + "[editorial]"+"\" id=\"" + tipoTextArea +" "+ (++j) + "\" placeholder=\"Editorial\" class = \"contenidos\"></label><br><hr>" ;
     }else{
         artyom.say("Solo las 2 primeras referencias disponibles, pero se creará un párrafo nuevo");
     }

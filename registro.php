@@ -64,17 +64,17 @@ if(isset($_POST['registrar']))
 		<label  for="discapacidad-registro"><strong>Discapacidad Visual:</strong></label>
 
 			<select name="discapacidad" id="discapacidad-registro" class="input-control">
-				<option  class="opcion">sin discapacidad</option>
-				<option  class="opcion">discapacidad moderada</option>
-				<option  class="opcion">discapacidad grave o ciega</option>
-				<option  class="opcion">proteccion de la vista</option>
+				<option  class="opcion">Sin discapacidad</option>
+				<option  class="opcion">Discapacidad moderada</option>
+				<option  class="opcion">Discapacidad grave o ciega</option>
+				<option  class="opcion">Proteccion de la vista</option>
 			</select><br>
 			<label for="nombre-registro"><strong>Nombre: </strong></label>
 			<input type="text" name="nombre" id="nombre-registro" class="input-control" placeholder="Nombre">
 			<label for="usuario-registro"><strong>Usuario :</strong></label>
 			<input type="text" name="usuario" id="usuario-registro" class="input-control" placeholder="Usuario">
 			<label for="registro-password"><strong>Password:</strong></label>
-			<input type="password" id="registro-password"  name="password" class="input-control" placeholder="Password">
+			<input type="password" id="registro-password"  name="pass" class="input-control" placeholder="Password">
 			<label for="registro-pais"><strong>País u origen</strong></label>
 			<input type="text" id="registro-pais"     class="input-control" name="pais" placeholder="Pais">
 			<label for="registro-profesion"><strong>Profesión:</strong></label>

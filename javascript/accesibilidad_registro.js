@@ -60,6 +60,9 @@ function pegarDeletreo(tipo_input){
     if(tipo_input==='profesión'||tipo_input==='profesion')
         tipo_input=tipo_input.replace('sion','').replace('sión','');
 
+    if(tipo_input==='password')
+        tipo_input=tipo_input.replace('word','');
+
     tipo_input=tipo_input.replace(' ', '').normalize('NFD')
     .normalize('NFD')
            .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi,"$1")

@@ -11,7 +11,7 @@
 
 	 <?php endif;?>
 	 <?PHP if(limpiar($_SESSION['discapacidad']) == limpiar('proteccion de la vista')):?>
-	 <?php /* Solo si el usuario es una persona sin discapacidad se cargara la hoja de estilo de sinCuidadoVista.css 
+	 <?php /* Solo si el usuario es una persona sin discapacidad se cargara la hoja de estilo predeterminada
 	
 	 */ ?>
 	  <link rel="stylesheet" href="css/proteccion_vista.css">
@@ -31,7 +31,7 @@
  		 <a id="vinculo_principal" href="index.php"><h1 class= "titulo" >Red Social Cientifica</h1></a>
 
  		<form action="buscar.php" method="get" id="buscar">
-		 	<label for="busqueda"><strong>Busqueda:</strong></label>
+		 	<label for="busqueda"><strong>Buscar:</strong></label>
  			<input type="text" id="busqueda" name="busqueda" placeholder="Buscar">
 			<?php /*  Si hacemos "enter" el formulario devolverá el control a buscar.php, en ese archivo  se recibe  $_GET['busqueda'] y si existe un usuario de mostrará,los existentes segun coincidencias de búsqueda  */?>
  		</form>

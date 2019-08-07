@@ -16,7 +16,7 @@ function ejecutarArtyom() {
         
         });
         
-            artyom.say("Estas en en el perfil, comando ayuda disponible");
+            artyom.say("Estas en el perfil, comando ayuda disponible");
 
 
 };

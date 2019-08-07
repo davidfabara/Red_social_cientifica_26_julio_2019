@@ -29,7 +29,7 @@ function ejecutar_ayuda() {
 
 function ejecutar_ayuda_subir(){
 
-    artyom.say('Los datos a introducir son: titulo,autor,fecha,categoria,resumen,introduccion,contenido,conclusiones,referencias, subir archivo y demas detalles al final se envia todo con el icono publicar','Seccion para subir publicacion, para el caso de categoria,resumen,introduccion,contenido,conclusiones,referencias pronuncia uno de ellos seguido de  elemento, seguido del número de elemento y luego el texto que deseas ingrezar, ejm resumen elemento 1, seguido del texto, para enviar la publiacción decir comando, enviar publicación');
+    artyom.say('Los datos a introducir son: titulo,autor,fecha,categoria,resumen,introduccion,contenido,conclusiones,referencias, subir archivo y demas detalles al final se envia todo pronunciando, enviar publicación. Seccion para subir publicacion, para el caso de categoria,resumen,introduccion,contenido,conclusiones,referencias pronuncia uno de ellos seguido de  elemento, seguido del número de elemento y luego el texto que deseas ingrezar, ejemplo:  resumen elemento 1, seguido del texto, para enviar la publicación decir comando, enviar publicación');
 }
 function pegarDeletreo(parametro){
 
@@ -288,9 +288,9 @@ if (annyang) {
 
         },
         'enviar publicación': () => {
-            
-            document.getElementById('subir-submit').click();
             artyom.say("Publicación enviada");
+            document.getElementById('subir-submit').click();
+           
 
         },
 
